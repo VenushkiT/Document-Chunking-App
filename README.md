@@ -176,25 +176,6 @@ Usage Instructions
 3. If any failures occur, check the failure logs endpoint
 4. After batch success, check the {batch_id}_manifests folder in Azure Storage for analysis reports and visualizations
 
-Deployment Instructions
-----------------------
-To deploy changes to Azure Container Registry and update the container:
-
-1. Login to Azure:
-   ```bash
-   az login
-   ```
-
-2. Login to Azure Container Registry:
-   ```bash
-   az acr login --name ifsmlacr
-   ```
-
-3. Build and push the new image (replace <new-version> with semantic version like 1.6.1):
-   ```bash
-   docker build -t ifsmlacr.azurecr.io/public-doc-chunking-app:<new-version> .
-   docker push ifsmlacr.azurecr.io/public-doc-chunking-app:<new-version>
-   ```
 
 4. Update in Azure Portal:
    - Navigate to Azure Portal → Containers → Container Details
