@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: ifsmlacr.azurecr.io/public-doc-chunking-app:1.8.1
+    container_name: html-processing-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./manifests:/code/manifests
+    restart: unless-stopped
